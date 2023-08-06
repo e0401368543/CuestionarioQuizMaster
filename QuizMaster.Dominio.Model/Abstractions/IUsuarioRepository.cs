@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace QuizMaster.Dominio.Model.Abstractions
 {
-    public interface IUsusarioRepository
+    public interface IUsuarioRepository : IBaseRepository<Usuarios>
     {
-        bool BuscarUsuario(string nameuser, string passw);
+        IEnumerable<Usuarios> ListarUsuario(int id);
     }
 }
