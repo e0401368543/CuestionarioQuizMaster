@@ -8,24 +8,21 @@ using System.Threading.Tasks;
 
 namespace QuizMaster.Infra.DataAcces.Repository
 {
-    public class AlumnosRepository:BaseRepository<Alumnos>, IAlumnosRepository
+    public class UsuarioRepository : BaseRepository<Usuarios>, IUsuarioRepository
     {
-        public IEnumerable<Alumnos> ListarAlumnos(int id)
+        public IEnumerable<Usuarios> ListarUsuario(int id)
         {
             try
             {
                 using (var context = new QuizMasterEntities1())
                 {
-                    var resultado = (from ins in context.Alumnos
-                                         // where ins.IdAlumnos == idCuestionario
-                                     select ins).ToList();
+                    var resultado = (from ins in context.Usuarios select ins).ToList();
                     return resultado;
                 }
-
             }
-            catch (Exception ex)
+            catch (Exception ex) 
             {
-                throw new Exception("Error al listar Alumnos " + ex.Message);
+                throw new NotImplementedException();
             }
 
         }
